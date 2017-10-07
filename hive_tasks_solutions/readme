@@ -1,0 +1,25 @@
+Step 1:
+======
+-> Copy the data from local to HDFS using the following commands
+	
+	hadoop fs -mkdir /hive
+	hadoop fs -mkdir /hive/json
+	hadoop fs -mkdir /hive/json/task1
+
+	hadoop fs -put /home/orinit/Desktop/hive_tasks/files/student1.json /hive/json/task1/student1.json
+
+	hadoop fs -mkdir /hive
+	hadoop fs -mkdir /hive/xml
+	hadoop fs -mkdir /hive/xml/task1
+
+	hadoop fs -put /home/orinit/Desktop/hive_tasks/files/student1.xml /hive/xml/task1/student1.xml
+
+Note: '/home/orinit/Desktop/hive_tasks/files/student1.json', '/home/orinit/Desktop/hive_tasks/files/student1.xml' both are my local path
+-----
+
+
+-> create a database as 'taskone';
+
+	CREATE DATABASE IF NOT EXISTS taskone;
+
+
