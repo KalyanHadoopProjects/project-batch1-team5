@@ -1,0 +1,53 @@
+CREATE KEYSPACE tasks WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 1};
+
+DESC KEYSPACES ;
+
+USE tasks;
+----------------------------------------------------------------------------------------------------------------------------------------
+(task6-csv)
+
+CREATE TABLE student12_csv (
+name text PRIMARY KEY,
+id int,
+course text,
+year int
+);
+
+DESC TABLE student1_csv ;
+	
+COPY student1_csv  (name, id, course, year) FROM '/home/orienit/Desktop/hive_tasks/files/NoSQL_files/student1.csv' WITH DELIMITER=',';
+
+select * from student1_csv;
+
+CAPTURE '/home/orienit/Desktop/hive_tasks/files/NoSQL_files/student1_csv_op.csv';
+
+SELECT * FROM student1_csv WHERE token(id) > token(2) AND course IN ('spark') ALLOW FILTERING;
+
+CAPTURE OFF
+
+COPY student1_csv  (name, id, course, year) TO '/home/orienit/Desktop/hive_tasks/files/NoSQL_files/student12.csv' WITH DELIMITER=',';
+
+==============================================================================================================================================
+(task6-tsv)
+
+CREATE TABLE student1_tsv (
+name text PRIMARY KEY,
+id int,
+course text,
+year int
+);
+
+DESC TABLE student1_tsv ;
+	
+COPY student1_tsv  (name, id, course, year) FROM '/home/orienit/Desktop/hive_tasks/files/NoSQL_files/student1.tsv' WITH DELIMITER='\t';
+
+select * from student1_tsv;
+
+CAPTURE '/home/orienit/Desktop/hive_tasks/files/NoSQL_files/student1_csv_op.csv';
+
+SELECT * FROM student1_tsv WHERE token(id) > token(2) AND course IN ('spark') ALLOW FILTERING;
+
+CAPTURE OFF
+
+COPY student1_tsv  (name, id, course, year) TO '/home/orienit/Desktop/hive_tasks/files/NoSQL_files/student12.tsv' WITH DELIMITER='\t';
+
