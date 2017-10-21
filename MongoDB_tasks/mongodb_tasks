@@ -1,0 +1,93 @@
+
+## Task 4 ##
+
+# Start the mongodb server and then execute the following command.
+
+mongoimport --db tasks --collection student1_json --file /Users/nareshb/Desktop/NoSQL_files/student1.json
+
+# Fetching the data from collection(client-side).
+
+db.student1_json.find();
+
+db.student1_json.find({"id": { "$gt": 2 }, "course": "spark" });
+
+# Exporting data to a file(server-side).
+
+mongoexport -d tasks -c student1_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --out /Users/nareshb/Desktop/NoSQL_files/mongodb_op/student1_op.json;
+
+mongoexport -d tasks -c student1_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --out /Users/nareshb/Desktop/NoSQL_files/mongodb_op/student1_op;
+
+------------------------------------------------------------------------------------------------
+
+# Fetching the data from collection.
+
+mongoimport --db tasks --collection student2_json --file /Users/nareshb/Desktop/NoSQL_files/student2.json
+
+# Fetching the data from collection.
+
+db.student2_json.find();
+
+db.student2_json.find({"id": { "$gt": 2 }, "course": "spark" });
+
+# Exporting data to a file(server-side).
+
+mongoexport -d tasks -c student2_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --out /Users/nareshb/Desktop/NoSQL_files/mongodb_op/student2_op.json;
+
+mongoexport -d tasks -c student2_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --out /Users/nareshb/Desktop/NoSQL_files/mongodb_op/student2_op;
+
+------------------------------------------------------------------------------------------------
+
+# Fetching the data from collection.
+
+mongoimport --db tasks --collection student3_json --file /Users/nareshb/Desktop/NoSQL_files/student3.json
+
+# Fetching the data from collection(client-side).
+
+db.student3_json.find();
+
+db.student3_json.find({"id": { "$gt": 2 }, "course": "spark" });
+
+# Exporting data to a file(server-side).
+
+mongoexport -d tasks -c student3_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --out /Users/nareshb/Desktop/NoSQL_files/mongodb_op/student3_op.json;
+
+mongoexport -d tasks -c student3_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --out /Users/nareshb/Desktop/NoSQL_files/mongodb_op/student3_op;
+
+------------------------------------------------------------------------------------------------
+
+## Task 5 ##
+
+# Fetching the data from collection.
+
+mongoimport --db tasks --collection student1_json --file /Users/nareshb/Desktop/NoSQL_files/student1.json
+
+# Fetching the data from collection(client-side).
+
+db.student1_json.find();
+
+db.student1_json.find({"id": { "$gt": 2 }, "course": "spark" });
+
+# Exporting data to a file(server-side).
+
+CSV:
+----
+mongoexport -d tasks -c student1_json --type=csv --fields name,id,course,year --out /Users/nareshb/Desktop/NoSQL_files/mongodb_op/student12_op.csv;
+
+mongoexport -d tasks -c student1_json --type=csv --fields name,id --out /Users/nareshb/Desktop/NoSQL_files/mongodb_op/student13_op.csv;
+
+mongoexport -d tasks -c student1_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --type=csv --fields name,id,course,year --out /Users/nareshb/Desktop/NoSQL_files/mongodb_op/student13_op.csv;
+
+mongoexport -d tasks -c student1_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --type=csv --fields name,id --out /Users/nareshb/Desktop/NoSQL_files/mongodb_op/student13_op.csv;
+
+JSON:
+-----
+db.student1_json.find({ }, { _id: 0, name: 1,id: 1 });
+
+db.student1_json.find({"id": { "$gt": 2 }, "course": "spark"}, {_id:0, "course": 0, "year": 0});
+
+mongoexport -d tasks -c student1_json --out /Users/nareshb/Desktop/NoSQL_files/mongodb_op/student11_op;
+
+mongoexport --db tasks --collection student1_json --query '{"id": { "$gt": 2 }, "course": "spark" }' --type=json --fields name,id --out /Users/nareshb/Desktop/NoSQL_files/mongodb_op/student11_op
+
+
+
