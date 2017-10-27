@@ -1,0 +1,101 @@
+# Importing data fron json file:
+--------------------------------
+# Start the mogodb server using 'mongod --dbpath=/home/orienit/mongodb_files' here '/home/orienit/mongodb_files' is my server files path
+# Open another terminal and copy and paste the below commands.
+
+mongoimport --db tasks --collection student1_json --file /home/orienit/Desktop/project_tasks/files/NoSQL_files/student1.json
+
+mongoimport --db tasks --collection student2_json --file /home/orienit/Desktop/project_tasks/files/NoSQL_files/student2.json
+
+mongoimport --db tasks --collection student3_json --file /home/orienit/Desktop/project_tasks/files/NoSQL_files/student3.json
+
+# Fetching the data from collection:
+------------------------------------
+# connect to the server using 'mongo' command and execute the following commands.
+
+SHOW dbs; (OR) SHOW databases;
+
+USE tasks;
+
+SHOW tables;
+
+db.student1_json.find();
+db.student2_json.find();
+db.student3_json.find();
+
+db.student1_json.find({"id": { "$gt": 2 }, "course": "spark" });
+{ "_id" : ObjectId("59f299f5c6da8523e17d26be"), "name" : "raj", "id" : 3, "course" : "spark", "year" : 2016 }
+
+> db.student2_json.find({"id": { "$gt": 2 }, "course": "spark" });
+{ "_id" : ObjectId("59f29df2c6da8523e17d26c4"), "name" : "raj", "id" : 3, "course" : "spark", "year" : 2016 }
+
+> db.student3_json.find({"id": { "$gt": 2 }, "course": "spark" });
+{ "_id" : ObjectId("59f29e0ac6da8523e17d26ca"), "name" : "raj", "id" : 3, "course" : "spark", "year" : 2016, "details" : [ { "address" : "hyderabad", "pincode" : 500001 }, { "address" : "banglore", "pincode" : 600001 } ] }
+> 
+
+## Task 4:
+==========
+
+# Exporting data to a file:
+---------------------------
+# Open the separate terminal or go to the same terminal where we executed the 'mongoexport' command and execute the bellow commands.
+
+mongoexport -d tasks -c student1_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --out /home/orienit/Desktop/project_tasks/files/NoSQL_files/mongodb_op/student1_op.json;
+
+mongoexport -d tasks -c student2_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --out /home/orienit/Desktop/project_tasks/files/NoSQL_files/mongodb_op/student2_op.json;
+
+mongoexport -d tasks -c student3_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --out /home/orienit/Desktop/project_tasks/files/NoSQL_files/mongodb_op/student3_op.json;
+			
+				-------------------------------------------------------------------
+
+mongoexport -d tasks -c student1_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --out /home/orienit/Desktop/project_tasks/files/NoSQL_files/mongodb_op/student1_op;
+
+mongoexport -d tasks -c student2_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --out /home/orienit/Desktop/project_tasks/files/NoSQL_files/mongodb_op/student2_op;
+
+mongoexport -d tasks -c student3_json -q '{"id": { "$gt": 2 }, "course": "spark"}' --out /home/orienit/Desktop/project_tasks/files/NoSQL_files/mongodb_op/student3_op;
+
+# The output files will be in '/home/orienit/Desktop/project_tasks/files/NoSQL_files/mongodb_op' path.
+
+
+## Task 5
+=========
+
+CSV Format:
+-----------
+mongoexport -d tasks -c student1_json --type=csv --fields name,id,course,year --out /home/orienit/Desktop/project_tasks/files/NoSQL_files/mongodb_op1/student1_op.csv;
+
+mongoexport -d tasks -c student1_json --type=csv --fields name,id --out /home/orienit/Desktop/project_tasks/files/NoSQL_files/mongodb_op1/student1_op1.csv;
+
+JSON Format:
+------------
+
+mongo tasks < /home/orienit/Desktop/project_tasks/files/NoSQL_files/student_script.js > /home/orienit/Desktop/project_tasks/files/NoSQL_files/mongodb_op1/student1_op.json
+
+#Output:
+--------
+
+MongoDB shell version: 3.2.7
+connecting to: tasks
+{ "name" : "raj", "id" : 3 }
+bye
+
+# Delete the first two lines and last one line from the output file.
+
+{ "name" : "raj", "id" : 3 }
+
+# Note: 'mongoexport is not working for this senorio using json.
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
