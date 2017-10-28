@@ -1,0 +1,17 @@
+//NoSql Task 1 will make familiar with HBASE import and export data from and to HBASE and HDFS
+
+//Export data from HBASE to HDFS using org.apache.hadoop.hbase.mapreduce.Export (Back end it will run MR so the files are creates as part-m-XXXX)
+//Run this on Terminal
+hbase org.apache.hadoop.hbase.mapreduce.Export "Student_csv" "/HBASE/Project/OUTPUT/csv"
+hbase org.apache.hadoop.hbase.mapreduce.Export "Student_tsv" "/HBASE/Project/OUTPUT/tsv"
+
+//Create new tables in HBASE
+//Run this on HBASE shell
+create 'Student_Back_csv','cfCSV'
+create 'Student_Back_tsv','cfTSV'
+
+//Import data from HDFS to HBASE using org.apache.hadoop.hbase.mapreduce.Import
+//Run this on Terminal
+hbase org.apache.hadoop.hbase.mapreduce.Import -Dimport.columns=cfCSV:name,HBASE_ROW_KEY,cfCSV:course,cfCSV:year Student_Back_csv hdfs://localhost:8020//HBASE/Project/OUTPUT/csv/part-m-00000
+
+hbase org.apache.hadoop.hbase.mapreduce.Import -Dimport.columns=cfTSV:name,HBASE_ROW_KEY,cfTSV:course,cfTSV:year Student_Back_tsv hdfs://localhost:8020//HBASE/Project/OUTPUT/tsv/part-m-00000

@@ -1,0 +1,30 @@
+//NoSql Task 1 will make familiar with HBASE table creation and Import data from HDFS files Also filtering data in hbase tables
+
+// First copy data from local to HDFS env
+//Run this on Terminal
+hadoop fs -mkdir /HBASE
+hadoop fs -mkdir /HBASE/Project
+hadoop fs -put /home/hadoop/Desktop/HBASEPractice/HBASE_ProjectTasks/*.* /HBASE/Project
+
+//create table with column family for hbase task 1
+//Run this on HBASE shell
+create 'Student_csv', 'cfCSV'
+create 'Student_tsv', 'cfTSV'
+
+// Import data into Student_tsv using TSV file
+//Run this on Terminal
+hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns=cfTSV:name,HBASE_ROW_KEY,cfTSV:course,cfTSV:year Student_tsv hdfs://localhost:8020/HBASE/Project/student1.tsv
+
+// Import data into Student_csv using CSV file
+//Run this on Terminal
+hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=, -Dimporttsv.columns=cfCSV:name,HBASE_ROW_KEY,cfCSV:course,cfCSV:year Student_csv hdfs://localhost:8020/HBASE/Project/student1.csv
+
+// Verify data
+//Run this on HBASE shell
+scan 'Student_tsv'
+scan 'Student_csv'
+
+// Filter required data
+//Run this on HBASE shell
+scan 'Student_tsv', {FILTER => "RowFilter(>, 'binary:2') AND ValueFilter(=,'binary:spark')"}
+scan 'Student_csv', {FILTER => "RowFilter(>, 'binary:2') AND ValueFilter(=,'binary:spark')"}
