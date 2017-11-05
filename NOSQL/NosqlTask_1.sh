@@ -1,8 +1,11 @@
 #!/bin/bash
 #
-#Check the hbase-master aand hbase region server is running properly using 'service --status-all' command
-#For connection refused error - remove /usr/lib/hadoop/etc/hadoop/mapred-site.xml then restart hbase master
-
+#Check the hbase-master aand hbase regionserver is running properly using 'service --status-all' command
+#sudo su (switch to root)
+#service hbase-master restart # On Master host
+#service hbase-regionserver restart # On all RS hosts
+#For connection refused error - remove /usr/lib/hadoop/etc/hadoop/mapred-site.xml with sudo permission, then restart hbase master
+#sudo rm /usr/lib/hadoop/etc/hadoop/mapred-site.xml
 # Copy the tsv and csv file in hdfs
 hdfs dfs -mkdir -p hdfs://localhost:8020/user/nosql
 hdfs dfs -put nosql/student1.tsv hdfs://localhost:8020/user/nosql
