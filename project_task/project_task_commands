@@ -1,0 +1,99 @@
+Task1:
+-----------------------
+Flume( server log data into hdfs)
+-> partition the data every min
+
+ORDER:
+----------
+=> using flume generate partition data 
+=> use kalyan utils to generate data
+
+Steps for task 1=>
+
+#create configuration file 'kalyan-csv-hdfs-agent.conf' for source sink channel
+
+unset FLUME_HOME
+#now execute below command to wait for the data coming in productlog.csv
+
+flume-ng agent -n agent --conf /home/orienit/flume/conf -f
+/home/orienit/flume/conf/kalyan-csv-hdfs-agent.conf -Dflume.root.logger=DEBUG,console
+
+#use Kalyan utils using below command to create continuous data in productog.csv, that data will be read by FLUME
+
+#[orienit@quickstart ~]$ java -cp /home/orienit/kalyan_bigdata_projects/kalyan-bigdata-examples.jar com.orienit.kalyan.examples.GenerateProductLog 
+file is a mandatory parameter
+usage: help
+ -d,--delimiter <arg>       Field Delimiter, bydefault is json format
+ -f,--file <arg>            output file path
+ -h,--help                  Show this help and quit
+ -l,--numberOfLogs <arg>    number of logs, maximum number is 100000
+ -n,--numberOfUsers <arg>   number of users, maximum number is 10000
+ -w,--waitTime <arg>        waiting time in millisec, bydefault is 100
+                            millisec
+#below command will generate productlog.csv under /tmp
+java -cp /home/orienit/kalyan_bigdata_projects/kalyan-bigdata-examples.jar \
+com.orienit.kalyan.examples.GenerateProductLog \
+-f /tmp/productlog.csv \
+-d ',' \
+-n 10 \
+-l 100000
+-w 60
+
+Task2:
+-----------------------
+Create a partition table with partition data in hdfs every min
+
+ORDER:
+--------------
+=> create partition table with partition columns are (day, hour, min) + 9 columns i.e: productlogs
+
+=> create normal table with  primary key + 9 columns i.e: productlog [hive-hbase integration table]
+
+STEPS to solve task 2=>
+
+# data in logs appearing as below, consider this for creating data in HIVE
+# 2,user2,user2@gmail.com,Laptops,Success,India,Chennai,Kottur,2017-24-11 05:24:47
+
+create external table productlogs (id int, name string, mailid string, item string, status string, country string, state string, city string,time string) 
+partitioned by (day string, hour int, min int) 
+row format delimited
+fields terminated by ','
+lines terminated by '\n'
+stored as textfile 
+location '/user/flume/productlogs';
+
+Alter table productlogs ADD PARTITION (day = '2017-11-11', hour = 17 , min = 26) location '/user/flume/productlogs/2017-11-11/17/26' 
+
+#We need to create hbase table first then only go head to create HIVE table for integration.
+create 'productlog' , 'cf1', 'cf2', 'cf3', 'cf4'
+
+#hive-hbase integration table
+create external table productlog (key string, id int, name string, mailid string, item string, status string, country string, state string, city string,time string) 
+row format delimited
+fields terminated by ','
+lines terminated by '\n'
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES (
+  "hbase.columns.mapping" = ":key,cf1:id,cf1:name,cf1:mailid,cf2:item,cf2:status,cf3:country,cf3:state,cf3:city,cf4:time"
+)
+TBLPROPERTIES ("hbase.table.name" = "productlog");
+
+Task3:
+-----------------------
+hive - hbase integration
+
+ORDER:
+----------------
+=> create hbase table i.e: productlog
+
+=> using hive insert the data from `productlogs` to `prodcutlog` table
+
+STEPS to solve take 3=>
+
+#productlog table in habse already created in Task 2
+ 
+INSERT OVERWRITE TABLE productlog SELECT concat(id, ":", time) AS key, id, name, mailid, item, status, country, state , city, time FROM productlogs;
+
+#now you can see data in hbase table
+scan 'productlog
+
