@@ -1,0 +1,32 @@
+Mab reduce :
+How to get the reducer output names as same as the input file names
+How to remove duplicates in MR
+Main components in MR
+
+Sqoop:
+How to changes the default settings in sqoop
+If one new column is added in RDBMS and need to get the same on hive then what steps to be taken care.
+How to set the number of threads to run for the sqoop command
+Performance tuning on sqoop
+what is the use for Sqoop metastore
+have you done any performance test before connecting using sqoop from RDBMS like (load test)
+How many threads using from source DB so that it will not get impacting your job 
+split-by and boundary-query, direct, fetch-size
+
+Hive:
+MSCK command use in metastore
+
+HBase:
+If data is devided in year bases(Ex 2015,2016,2017,2018) in column family and those are stored based on key then how can we devide 2015 and 2016 data based on key
+
+HDFS/linux:
+CP and DISTCP difference and which oneis preforable.
+how to remove files from trash.
+What is soft like and hard link
+Why to use nohup
+
+
+Spark:
+Why RDD as RDD is using many I/O operations
+version defference between RD, DataFrame and Data Set
+
