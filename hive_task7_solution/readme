@@ -9,6 +9,6 @@ Copy the data into HDFS using the below commands
 
 	hadoop fs -put /home/orienit/Desktop/hive_tasks/files/Behavioral_Risk_Factor_Surveillance_System.csv /hive/csv/task7/
 
-Note: '/home/orienit/Desktop/hive_tasks/files/Behavioral_Risk_Factor_Surveillance_System.csv' is my local path
+Note: '/home/orienit/Desktop/hive_tasks/files/Behavioral_Risk_Factor_Surveillance_System.csv' is my local path.
 -----
 
