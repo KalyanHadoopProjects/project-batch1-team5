@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>KOSUS Chefs</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="styles/meterial-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/chefs-menu.css">
+    <link rel="stylesheet" href="styles/chefs-site.css">
+    <link rel="stylesheet" href="styles/chefs-we-are-pros.css">
+    <link rel="stylesheet" href="styles/chefs-about-us.css">
+    <link rel="stylesheet" href="styles/chefs-quick-apply.css">
+    <link rel="stylesheet" href="styles/chefs-footer.css">
+
+    <link rel="stylesheet" href="styles/views/abroad.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html">
+                <img id="siteLogoImg" src="media/Logo_KOSUS_3.png" alt="KOSUS Logo">
+            </a>
+            <!-- <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link">Left Link 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Left Link 2</a>
+                    </li>
+                    </ul> -->
+            <ul id="navbarRightMenu" class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" onclick="openNav()">
+                        <img id="siteMenuEqualIcon" src="media/menu_black.png" alt="Menu Logo">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- The overlay -->
+        <div id="myNav" class="overlay">
+            <div class="container-fluid" style="width: 100% !important;">
+                <!-- Overlay content -->
+                <div class="overlay-content">
+                    <div id="overlayContentRow" class="row">
+                        <div class="col-sm-4 overlay-content-left">
+                            <!-- <a class="navbar-brand" href="#">KOSUS</a> -->
+                            <a class="navbar-brand" href="index.html">
+                                <img src="media/Header Logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-sm-8 overlay-content-right">
+                            <div class="">
+                                <!-- Button to close the overlay navigation -->
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                <a style="margin-top: 90px;" href="abroad.html">Opportunities Abroad</a>
+                                <a href="uae.html">Opportunities UAE</a>
+                                <a href="domestic.html">Opportunities Domestic</a>
+                                <a href="collaborate.html">Collaborate</a>
+                                <a href="index.html">Apply</a>
+                            </div>
+                            <div class="menu-footer-links">
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <a href="privacypolicy.html">
+                                            Privacy Policy
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="termsandconditions.html">
+                                            Terms and Conditions
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPPORTUNITIES ABROAD -->
+        <div id="AbroadPageContainer" class="row">
+            <div class="col-12 col-md-10">
+                <img src="media/COLLABORATE.png" class="img-fluid" alt="Snow" style="width:100%">
+            </div>
+            <div class="col-12 col-md-2 right-sub-container">
+                <div class="right-sub-content">
+                    <span style="font-size: 45px;">COLLABORATE</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12"
+                style="font-family: font-chef-p; padding: 40px; font-size: 20px; line-height: 1.5rem;">
+                <p>
+                    Kosus Hospitality Alliance is an expanding business with strong goals, we assure the collaboration
+                    with us is worth the time. Mutual cooperation organized in a dignified manner with destined
+                    objectives is what we aim at. We firmly believe, mutual benefits are the result of connective
+                    ambitions and humble interrelation. </p>
+
+                <p> Illustrious heterogeneity of any project or venture undertaken, articulates our engagement. We
+                    promise a shielded and prominent fairness about every step you walk with us. </p>
+
+                <p> Kosus Hospitality Alliance selects candidates on refinement for both domestic and international
+                    processes, allowing the domestic employer and international sponsor respectively, select the needed
+                    and notable. </p>
+
+                <p>For collaborations, contact us directly on the phone or mail us at Sriharsha@kosushospitality.com
+                </p>
+            </div>
+        </div>
+
+        <!-- QUICK APPLY -->
+        <div id="quickApplyContainer" class="row">
+            <div class="col-12 col-md-6">
+                <div class="abroad-apply-form">
+                    <form>
+                        <div style="margin-bottom: 20px; font-family: font-chef;">
+                            <h1>Domestic Employer</h1>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmployerName" class="col-sm-4 col-form-label">Employer's Name:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputEmployerName"
+                                    placeholder="your full name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputCountry" class="col-sm-4 col-form-label">State/City of Origin:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputCountry"
+                                    placeholder="your city and country">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputContactNumber" class="col-sm-4 col-form-label">Contact Number:</label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" id="inputContactNumber" placeholder="+91">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputContactId" class="col-sm-4 col-form-label">Contact ID:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputContactId" placeholder="+91">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputAddress" class="col-sm-4 col-form-label">Address
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputAddress" placeholder="your address">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputQuery" class="col-sm-4 col-form-label">Your view/ Query:</label>
+                            <div class="col-sm-8">
+                                <textarea type="text" class="form-control" id="inputQuery"
+                                    placeholder="your description"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-4 offset-sm-4">
+                                <a class="btn" href="#" role="button">
+                                    <img src="media/home/Group 7.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="abroad-apply-form">
+                    <form>
+                        <div style="margin-bottom: 20px;font-family: font-chef;">
+                            <h1>International Sponsor</h1>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputOrganizationName" class="col-sm-4 col-form-label">Organization's
+                                Name:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputOrganizationName"
+                                    placeholder="your organization name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputCountry" class="col-sm-4 col-form-label">Country/Province:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputCountry"
+                                    placeholder="your city and country">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputContactNumber" class="col-sm-4 col-form-label">Contact Number:</label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" id="inputContactNumber" placeholder="+91">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputContactId" class="col-sm-4 col-form-label">Contact ID:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputContactId" placeholder="+91">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputAddress" class="col-sm-4 col-form-label">Address
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputAddress" placeholder="your address">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputQuery" class="col-sm-4 col-form-label">Your view/ Query:</label>
+                            <div class="col-sm-8">
+                                <textarea type="text" class="form-control" id="inputQuery"
+                                    placeholder="your description"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-4 offset-sm-4">
+                                <a class="btn" href="#" role="button">
+                                    <img src="media/home/Group 7.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <div id="footerContainer" class="row" style="font-family: font-chef-p;">
+        <div class="col-12 col-md-4">
+            <a class="navbar-brand" href="index.html">
+                <img id="" src="media/Footer Logo.png" width="60%" alt="KOSUS Logo">
+            </a>
+            <p style="color: #fff;"> &copy; 2019 kosus hospitality alliance. All rights reserved.</p>
+        </div>
+        <div class="col-12 col-md-4">
+            <a style="color: #fff; text-decoration: none;" href="privacypolicy.html">Privacy Policy</a><br />
+            <a style="color: #fff; text-decoration: none;" href="termsandconditions.html">Terms and conditions</a>
+        </div>
+        <div class="col-12 col-md-4" style="color: #fff;">
+            <h3>Contact us</h3>
+            <p>E-Mail: kosushospitalityalliance@gmail.com</p>
+            <p>Call: +919063714542</p>
+            <div id="footerSocialLinks">
+                <span>
+                    <a target="_blank" href="www.instragram.com">
+                        <img src="media/home/instagram-logo.png" alt="Instagram">
+                    </a>
+                </span>
+                <span>
+                    <a target="_blank" href="www.facebook.com">
+                        <img src="media/home/facebook-logo.png" alt="Facebook">
+                    </a>
+                </span>
+                <span>
+                    <a target="_blank" href="www.linkedin.com">
+                        <img src="media/home/linkedin-letters.png" alt="LinkedIn">
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Use any element to open/show the overlay navigation menu -->
+    <!-- <span onclick="openNav()">open</span> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        // /* Open when someone clicks on the span element */
+        // function openNav() {
+        //     document.getElementById("myNav").style.width = "100%";
+        // }
+
+        // /* Close when someone clicks on the "x" symbol inside the overlay */
+        // function closeNav() {
+        //     document.getElementById("myNav").style.width = "0%";
+        // }
+        /* Open */
+        function openNav() {
+            document.getElementById("myNav").style.display = "block";
+        }
+
+        /* Close */
+        function closeNav() {
+            document.getElementById("myNav").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

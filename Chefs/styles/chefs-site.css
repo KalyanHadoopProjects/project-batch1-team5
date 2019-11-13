@@ -1,0 +1,168 @@
+@font-face {
+  font-family: font-chef;
+  src: url(../fonts/butler/Butler_Regular.otf);
+}
+
+@font-face {
+  font-family: font-chef-p;
+  src: url(../fonts/Dosis-Regular_1.otf);
+}
+
+body {
+  font-family: font-chef;
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  width: 93% !important;
+  overflow-x: hidden;
+}
+
+#siteLogoImg {
+  background: #fff;
+  padding: 9px 71px;
+}
+
+#siteMenuEqualIcon {
+  padding-right: 105px;
+}
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  & > [class^="col-"],
+  & > [class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.btn-default {
+  background-color: #00a0a0;
+  color: rgb(255, 255, 255);
+}
+
+.material-icons {
+  font-size: 60px;
+}
+
+.container {
+  padding: 0;
+}
+
+.navbar {
+  padding: 0;
+  background-color: #00a0a0;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+#menuIcon {
+  cursor: pointer;
+}
+
+#navbarRightMenu {
+  color: #fff;
+}
+
+.img {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.align-content-vertical-center {
+  display: flex;
+  align-items: center;
+  background-color: #00a0a0;
+}
+
+.no-content-div {
+  background-color: #00a0a0;
+  opacity: 0.7;
+}
+
+.driven-container {
+  color: #000;
+  position: absolute;
+  left: -196px;
+  right: 40px;
+}
+
+#drivenTitle {
+  color: #00a0a0;
+}
+
+.driven-container .driven-container-right {
+  background-color: rgb(255, 255, 255);
+  /* padding: 40px; */
+  padding: 40px 0px 0px 40px;
+}
+
+.driven-container span {
+  display: block;
+  font-size: 36px;
+}
+
+#btnLearnMore {
+  margin-bottom: -55px;
+  border: 1px solid;
+}
+
+#chefsHeading1 {
+  font-size: 45px;
+}
+
+.abroad-apply-form {
+  font-family: font-chef-p;
+  padding: 25px 25px 27px 97px;
+  box-shadow: 0px 0px 4px 0px rgba(50, 50, 50, 0.52);
+}
+
+.abroad-apply-form .form-group {
+  margin-bottom: 2rem;
+}
+
+.instagram-link {
+  margin-top: -60px;
+  margin-left: 980px;
+}
+
+.fb-link {
+  margin-top: -60px;
+  margin-left: 1140px;
+}
+
+.linkedin-link {
+  margin-top: -60px;
+  margin-left: 1300px;
+}
+
+#weProsText {
+  font-family: font-chef-p;
+}
+
+@media (max-width: 576px) {
+  .align-content-vertical-center {
+    padding: 7px;
+  }
+
+  .driven-container {
+    position: relative;
+    left: 2px;
+    right: 9px;
+    border: 1px solid rgb(0, 160, 160);
+    border-radius: 4px 4px;
+    padding: 7px;
+  }
+
+  .driven-container .driven-container-right {
+    padding: 7px;
+  }
+
+  #btnLearnMore {
+    margin-bottom: 0px;
+  }
+}

@@ -1,0 +1,35 @@
+#quickApplyContainer {
+  margin-top: 44px;
+}
+
+#quickApplyContainer h2 {
+  margin-bottom: 44px;
+}
+
+.quick-apply-left {
+  background-color: #00a0a0;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  flex-direction: column;
+  padding-top: 140px;
+  text-align: center;
+}
+
+#quickApplyContent {
+  padding-top: 35px;
+  padding-right: 60px;
+  font-family: font-chef-p;
+  font-size: 20px;
+  line-height: 2rem;
+}
+
+@media (max-width: 576px) {
+  #quickApplyContainer {
+    margin-top: 30px;
+  }
+
+  #quickApplyContent {
+    padding-top: 0px;
+  }
+}

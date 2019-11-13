@@ -1,0 +1,86 @@
+#logoMenuContainer {
+  height: 140px;
+  display: flex;
+  align-items: center;
+}
+
+#logoText {
+  font-size: 30px;
+  text-decoration: none;
+  color: #000;
+}
+
+.bg-primary {
+  background-color: #00a0a0 !important;
+}
+
+.zero-padding {
+  padding: 0;
+}
+
+.font-site-color {
+  color: #00a0a0;
+}
+
+/* #00A0A0 */
+
+#menuIcon {
+  cursor: pointer;
+  font-size: 40px;
+  position: relative;
+  height: 100%;
+  top: 45px;
+}
+
+.img-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.img-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#text-container {
+  position: absolute;
+  left: -155px;
+  top: 127px;
+  right: 103px;
+  bottom: 0;
+}
+
+#text-container-inner-1 {
+  background-color: #17a2b82b !important;
+}
+#text-container-inner-2 {
+  background-color: white;
+}
+
+#btnLearnMore {
+  margin-top: 53px;
+  margin-left: 55px;
+}
+
+@media (max-width: 576px) {
+  #text-container {
+    width: 80%;
+    position: absolute;
+    left: 30px;
+    top: -118px;
+    /* right: 103px; */
+    bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}

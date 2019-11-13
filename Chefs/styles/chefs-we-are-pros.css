@@ -1,0 +1,87 @@
+#weAreProsContainer,
+#abroadOpps,
+#domesticOpps,
+#uaeOpps {
+  margin-top: 40px;
+}
+
+.we-pros-title {
+  margin-bottom: 23px;
+}
+
+#weProsText {
+  padding-right: 50px;
+}
+
+.pro-sub-head {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.right-sub-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.right-sub-content {
+  padding: 20px;
+  margin-left: -170px;
+  background-color: #fff;
+}
+
+.right-sub-content p {
+  font-size: 45px;
+}
+
+.right-sub-content span {
+  font-size: 45px;
+}
+
+.left-sub-content span {
+  font-size: 45px;
+}
+
+.left-sub-content p {
+  font-size: 45px;
+}
+
+.left-sub-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.left-sub-content {
+  padding: 50px 50px 50px 70px;
+  margin-right: 120px;
+  background-color: #fff;
+  z-index: 9999;
+}
+
+@media (max-width: 576px) {
+  .right-sub-content {
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-top: -15px;
+  }
+
+  .right-sub-content p {
+    font-size: 40px;
+  }
+
+  .right-sub-content span {
+    font-size: 40px;
+  }
+
+  .left-sub-content span {
+    font-size: 40px;
+  }
+
+  .left-sub-content p {
+    font-size: 40px;
+  }
+
+  .left-sub-content {
+    padding: 0px;
+  }
+}
